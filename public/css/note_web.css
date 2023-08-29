@@ -1,0 +1,1094 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@800&display=swap');
+@import  url("https://fonts.googleapis.com/css?family=Montserrat");
+
+:root{
+  --width: 15px;
+  --height: 15px;
+  --bounce_height: 30px;
+}
+body{
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+*{
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar{
+  width: 0.1rem;
+}
+::-webkit-scrollbar-track{
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb{
+  background-color: darkgray;
+  outline: 1px solid slategray;
+  border-radius: 10px;
+}
+.nav-bar{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background: #222a34;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+.project-title{
+  color: white;
+  font-weight: bolder;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-left: 15px;
+  word-spacing: 2px;
+  letter-spacing: 2px;
+}
+.profile-photo{
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+.user-name{
+  color: white;
+  font-weight: lighter;
+  font-size: 0.95rem;
+  text-transform: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.dropdown-menu{
+  cursor: pointer;
+  position: absolute;
+  right: 0.5%;
+  top: 50px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 80px;
+  background-color: black;
+  box-shadow: 1px 1px 10px black;
+  z-index: 5;
+  transition: all 0.6s;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.dropdown-menu div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+}
+.dropdown-menu div:hover{
+  font-size: 1.3rem;
+}
+#my-profile{
+  border-bottom: 1px ridge #fff;
+}
+#my-profile:hover{
+  font-size: 1.2rem;
+}
+.dropdown-menu::before{
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  position: absolute;
+  right: 5%;
+  top: -5%;
+  transform-origin: center center;
+  transform: rotate(45deg);
+}
+.bi-caret-down-fill{
+  transition: all 0.4s;
+  transform-origin: center center;
+}
+.bi-power{
+  margin-right: 0.4rem !important;
+  font-weight: bolder;
+  font-size: 1.2em;
+}
+.profile-icon{
+  margin-right: 0.4rem !important;
+}
+.main-section{
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../images/11146.jpg);
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-section::before{
+  content: '';
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.greet-msg{
+  color: white;
+  font-weight: bolder;
+  z-index: 1;
+  /* border: 1px solid white; */
+  height: 250px;
+  overflow: hidden;
+  display: block;
+  animation: none;
+}
+@keyframes fadedisplay {
+  0%{opacity: 1;}
+  100%{opacity: 0;} 
+}
+.greet-text{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.app-welcome-text{
+  font-family: 'Courgette', cursive;
+  font-size: 2rem;
+  transition: transform 1.1s;
+  transform: translateY(-95px);
+  animation: downslide 1.1s ease forwards;
+  line-height: 1.5;
+}
+@keyframes downslide {
+  0% {transform: translateY(-95px);}
+  100%{ transform: translateY(0px);}
+}
+.salutation-text{
+  /* position: relative;
+  top: 20%; */
+  font-family: 'Paprika', cursive;
+  font-size: 2.8rem;
+  line-height: 1.8;
+  transform: translateX(555px);
+  animation: leftslide 1.3s ease-out forwards;
+}
+@keyframes leftslide {
+  0%{transform: translateX(555px);}
+  100%{transform: translateX(0px);}
+}
+.profile-data-block{
+  width: 400px;
+  height: 50%;
+  position: absolute;
+  background-color: rgba(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px rgb(10, 10, 10);
+  z-index: 1;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.back-arrow{
+  font-size: 1.9rem;
+  position: absolute;
+  left: 2%;
+  top: 1%;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.9s;
+  cursor: pointer;
+}
+.back-arrow:hover{
+  color: white;
+  background: linear-gradient(to right, #234a91, #912077);;
+}
+.profile-data{
+  width: 95%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #0d3d56;
+}
+.profile-card-title{
+  margin-bottom: 5%; 
+}
+.profile-image-section{
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  transition: all 0.9s;
+}
+.profile-image{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.profile-image img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;;
+}
+.profile-image{
+  margin: auto;
+}
+.upload-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.751);
+  color: white;
+  position: relative;
+  margin-top: -20%;
+  z-index: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: bold;
+}
+.profile-photo-upload-form{
+  width: 300px;
+  position: absolute;
+  transform: translateX(-350px);
+  transition: all 0.9s;
+}
+.image-submit{
+  background: linear-gradient(to right, #234a91, #912077);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: -15px;
+}
+.upload-form{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+.remove-account-link{
+  color: #234a91;
+  cursor: pointer;
+  position: absolute;
+  right: 2%;
+  bottom: 1%;
+  font-size: 0.9rem
+}
+.remove-account-link:hover{
+  text-decoration: underline;
+}
+.note-taking-box{
+  height: 90vh;
+  width: 90vw;
+  margin-top: 40px;
+  background-color: rgba(255, 255, 255, 0.515);
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px rgb(10, 10, 10);
+  display: none;
+  visibility: hidden;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  /* z-index: 1; */
+  animation: none;
+}
+
+@keyframes boxdisplay {
+  0%{visibility: hidden;opacity: 0;}
+  /*60%{transform: translateY(20px);}
+  75%{transform: translateY(-20px);}*/
+  100%{visibility: visible; opacity: 1;}
+}
+.note-logo{
+  position: absolute;
+  left: 1%;
+  width: 30px;
+  height: 30px;
+}
+/* .note-box-title{
+  z-index: 4;
+  width: 100%;
+  height: 5%;
+  background-color: #222a34;
+  border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 2px 1px 7px rgb(68, 67, 67);
+} */
+.note-taking-section{
+  width: 30%;
+  height: 100%;
+}
+.note-card-display{
+  width: 70%;
+  height: 100%;
+  border-left: 1px ridge gray;
+  z-index: 4;
+  overflow-y: scroll;
+  opacity: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  transition: all 0.7s;
+  perspective: 1000px;
+  perspective-origin: center center;
+  overflow-x: hidden;
+}
+.note-card-display::-webkit-scrollbar{
+  width: 0.2rem;
+}
+.card-block{
+  width: 100%;
+  border: none;
+  position: absolute;
+  top: 0%;
+  transition: 0.6s all;
+  transform: translateY(0px);
+}
+.card-block::-webkit-scrollbar{
+  width: 0.2rem;
+}
+.operation-status-message{
+  position: absolute;
+  height: 30px;
+  /* width: 250px; */
+  padding: 10px;
+  opacity: 0;
+  background-color: #6fd78d;
+  z-index: 2;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  color: white;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  animation: none;
+}
+/* .status-msg{ 
+  position: absolute;
+  top: 45%;
+  display: flex;
+  opacity: 1;
+  z-index: 5;
+  /* background-color: white;
+}*/
+#search-option, .bi-x-lg{
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  cursor: pointer;
+  z-index: 5;
+  /* display: none; */
+}
+.search-note{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*align-items: center; */
+  align-items: center;
+  width: 400px;
+  /* position: absolute;
+  top: 0%; */
+  transition: 0.6s all;
+  transform: translateY(-250px);
+}
+.search-note input{
+  width: 250px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 10px;
+}
+.date-search-block{
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+label{
+  font-family: 'Arima Madurai', cursive;
+  color: #0d3d56;
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+.search-button{
+  cursor: pointer;
+  font-weight: bold;
+  width: 100px;
+  height: 40px;
+  background: linear-gradient(to right, #234a91, #912077);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 40px;
+  box-shadow: 1px 2px 5px rgb(68, 67, 67);
+}
+@keyframes status_appear {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+@keyframes status_disappear {
+  0%{opacity: 1; display: flex;}
+  100%{opacity: 0; display: none;}
+}
+.note-taking-section-content{
+  color: #0d3d56;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.note-description-input-box{
+  width: 91%;
+  height: 100%;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 8px 10px gray;
+}
+#note-box-logo{
+  width: 30px;
+  height: 30px;
+  /* border-radius: 50%; */
+}
+textarea{
+  outline: none;
+  border: none;
+  width: 98%;
+  height: 90%;
+  resize: none;
+  font-size: 1.2rem;
+  font-family: cursive;
+  border-radius: 15px;
+  /* position: relative;
+  bottom: 15px;  */
+}
+#note-update-title{
+  border: 1px solid gray;
+  width: 95%;
+  height: 50px;
+  position: absolute;
+  top: 6%;
+  display: none;
+}
+#note-update-content{
+  border: 1px solid gray;
+  width: 95%;
+  height: 60%;
+  display: none;
+  position: absolute;
+  bottom: 20%;
+}
+.note-taking-box-title{
+  position: relative;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  color: whitesmoke;
+  font-family: 'Courier New', Courier, monospace;
+  left: 1%;
+  top: 3%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.note-title-input-block{
+  width: 90%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 8px 10px gray;
+}
+.note-title-box{
+  width: 100%;
+  height: 100px;
+  position: relative;
+  top: -10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.note-title{
+  font-family: 'Arima Madurai', cursive;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+input{
+  position: relative;
+  left: 10px;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  width: 90%;
+  height: 50px;
+  font-family: cursive;
+  font-size: 1.2rem;
+  transition: all 1s ease-in-out;
+  /* box-shadow: 2px 8px 10px gray; */
+}
+
+.add-note-btn{
+    background: linear-gradient(to right, #234a91, #912077);
+    outline: none;
+    border: none;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px 50px;
+    border-radius: 35px;
+    color: white;
+    font-weight: bolder;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: -2px 4px 7px rgb(68, 67, 67);
+}
+.bi-plus-circle{
+    position: relative;
+    margin-right: 5px;
+}
+.notecard{
+  width: 45%;
+  height: 50%;
+  margin: 10px;
+  border-radius: 25px;
+  background-color: white;
+  color: gray;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(0deg);
+  transition: all 1s;
+  transform-style: preserve-3d;
+  box-shadow: 2px 8px 10px gray;
+  cursor: pointer;
+  animation: none;
+  z-index: 0;
+}
+@keyframes disp-card {
+  0%{opacity: 0;visibility: hidden;}
+  100%{opacity: 1;visibility: visible;}
+}
+.note-id{
+  position: absolute;
+  top: 1%;
+  left: 20px;
+  display: none;
+}
+#edit-icon{
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 1%;
+  right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+.card-body-front{
+  width: 95%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.card-body-front p{
+  width: 90%;
+  height: 72%;
+  overflow-x: hidden;
+  cursor: text;
+  /* overflow-y: scroll; */
+  overflow-wrap: break-word;
+}
+.card-body-front p::selection{
+  background-color: rebeccapurple;
+  color: white;
+}
+.card-body-front p h3::selection{
+  color: white;
+  background-color: rebeccapurple;
+}
+.delete-note-btn{
+  width: 60%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 20px;
+  font-size: 0.85rem;
+  position: absolute;
+  bottom: 10%;
+  box-shadow: 1px 2px 5px rgb(68, 67, 67);
+  background: linear-gradient(to right, #234a91, #912077);
+  outline: none;
+  border: none;
+  border-radius: 35px;
+  color: white;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.save-note-btn{
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 20px;
+  font-size: 0.85rem;
+  position: absolute;
+  left: 5%;
+  bottom: 25px;
+  box-shadow: 1px 2px 5px rgb(68, 67, 67);
+  background: linear-gradient(to right, #234a91, #912077);
+  outline: none;
+  border: none;
+  border-radius: 35px;
+  color: white;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.cancel-edit{
+  width: 55%;
+  height: 50px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 20px;
+  font-size: 0.85rem;
+  position: absolute;
+  right: 5%;
+  bottom: 25px;
+  background-color: white;
+  box-shadow: 1px 2px 5px rgb(68, 67, 67);
+  border-radius: 35px;
+}
+.edit-card-btns{
+  display: none;
+  width: 95%;
+  height: 100px;
+  /* opacity: 0; */
+  animation: none;
+  position: absolute;
+  bottom: 0%;
+  margin-bottom: 10px;
+}
+@keyframes editbtn_appear {
+  0%{display: none;}
+  100%{display: block !important;}
+}
+.bi-file-earmark-x{
+  position: relative;
+  left: -2%;
+}
+.btn:hover{
+  opacity: 0.95;
+}
+.delete-note-btn:hover{
+  opacity: 0.7;
+}
+.note-content-box{
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.note-description{
+  font-family: 'Arima Madurai', cursive;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+/* .note-author-box{
+  width: 100%;
+  margin-top: -2%;
+}
+.note-author{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arima Madurai', cursive;
+  font-size: 1.3em;
+}
+input.author-field{
+  width: 70%;
+  height: 40px;
+  border-radius: 5px;
+  box-shadow: 2px 4px 10px gray;
+} */
+.bi-list{
+  color: whitesmoke;
+  display: block !important;
+  margin-top: -10px;
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 1.8em;
+}
+/* .bi-phone-flip{
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+.bi-phone-flip:hover{
+  color: black;
+} */
+/* .flip-front{
+  left: 280px;
+} */
+
+.notecard:hover{
+  scale: 1.04;
+  /* transform: rotate(5deg); */
+}
+.note-footer-portion{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.note-footer-portion .creation-date{
+  position: absolute;
+  right: 1%;
+  bottom: 0.5%;
+}
+.note-footer-portion .creation-time{
+  position: absolute;
+  left: 1%;
+  bottom: 0.5%;
+}
+.note-footer-portion .creation-time::selection{
+  color: #fff;
+  background-color: rebeccapurple;
+}
+.note-footer-portion .creation-date::selection{
+  color: #fff;
+  background-color: rebeccapurple;
+}
+#delete-note-text::selection{
+  color: #fff;
+  background-color: rebeccapurple;
+}
+.card-detailed-display{
+  transform: translateX(-220%);
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  padding: 1%;
+  /* width: 450px; */
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  /* transition: all 1s; */
+  box-shadow: 4px 5px 15px rgb(68, 67, 67);
+  cursor: pointer;
+  animation: none;
+  /* animation: detailed-card-display 1s linear 8s forwards; */
+}
+@keyframes detailed-card-display {
+  0%{transform: translateX(-220%);}
+  100%{transform: translateX(5%);}
+}
+@keyframes detailed-card-disp-rem {
+  0%{transform: translateX(0%);}
+  100%{transform: translateX(320%);}
+}
+.card-display-section::after{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 250%;
+  background-color: gray;
+  opacity: 0.5;
+  z-index: 4;
+}
+.card-detailed-display #note-detailed-description{
+  width: 500px;
+  /* height: 290px; */
+  margin-bottom: 15px;
+  text-align: center;
+}
+.edit-link{
+  position: absolute;
+  right: 3%;
+  top: 1%;
+}
+#note-detailed-title{
+  margin-top: 20px;
+  font-family: cursive;
+  font-size: 4.8em;
+  margin-bottom: 15px;
+}
+.wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  visibility: visible;
+  animation: none;
+}
+
+@keyframes removedisplay {
+  0%{opacity: 1;}
+  100%{opacity: 0;} 
+}
+
+.text {
+  color: #912077;
+  display: inline-block;
+  margin-left: 5px;
+  /* font-weight: bolder; */
+  font-size: 1.8rem;
+}
+
+.bounceball {
+  position: relative;
+  display: inline-block;
+  height: 37px;
+  width: var(--width);
+}
+.bounceball:before {
+  position: absolute;
+  content: '';
+  display: block;
+  top: 0;
+  width: var(--width);
+  height: var(--height);
+  border-radius: 50%;
+  background: linear-gradient(to right, #234a91, #912077);;
+  transform-origin: 50%;
+  animation: bounce 500ms alternate infinite ease;
+}
+
+@keyframes bounce {
+  0%{top: var(--bounce_height);
+    height: 5px;
+    border-radius: 60px 60px 20px 20px;
+    transform: scaleX(2);
+  }
+  35%{
+    height: var(--height);
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@media only screen and (max-width: 1170px) {
+  .add-note-btn{
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  .delete-note-btn{
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .note-taking-box{
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .note-taking-box{
+    width: 95vw;
+    overflow-y: scroll;
+  }
+  .note-taking-section{
+    width: 100%;
+    height: 485px;
+  }
+  .note-card-display{
+    width: 100%;
+  }
+  .note-title-box{
+    width: 95%;
+    align-items: self-start;
+    justify-content: space-around;
+  }
+  .note-content-box{
+    width: 95%;
+    height: 50%;
+    align-items: self-start;
+  }
+  .note-title{
+    font-size: 1.5rem;
+    margin-bottom: 0px;
+  }
+  .note-description{
+    font-size: 1.5rem;
+    margin-bottom: 0px;
+  }
+  .note-title-input-block{
+    width: 100%;
+  }
+  .note-description-input-box{
+    width: 100%;
+  }
+  .add-note-btn{
+    position: relative;
+  }
+  .wrap{
+    top: 20%;
+  }
+  .notecard{
+    height: 300px;
+    width: 375px;
+  }
+  .note-taking-section{
+    height: 360px;
+  }
+  .note-taking-section-content{
+    height: 95%;
+  }
+  .add-note-btn{
+    position: relative;
+    top: 7.5%;
+    width: 50%;
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  .notecard{
+    width: 90%;
+  }
+  .wrap{
+    top: 30%;
+  }
+  .text{
+    font-size: 1.5rem;
+  }
+
+}
+
+@media only screen and (max-width: 480px) {
+  .project-title{
+    font-size: 1rem;
+  }
+  .user-name{
+    justify-content: space-evenly;
+  }
+  .note-taking-section-content{
+    height: 80%;
+    justify-content: space-around;
+  }
+  .note-taking-section{
+    height: 360px;
+  }
+  .note-taking-section-content{
+    height: 95%;
+  }
+  .add-note-btn{
+    position: relative;
+    top: 5%;
+    width: 50%;
+    font-size: 0.9rem;
+  }
+  .wrap{
+    top: 20%;
+  }
+  .text{
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .project-title{
+    font-size: 0.8rem;
+  }
+  .add-note-btn{
+    font-size: 0.7rem;
+  }
+  .profile-photo{
+    width: 30px;
+    height: 30px;
+  }
+  .note-taking-section{
+    height: 360px;
+  }
+  .note-taking-section-content{
+    height: 95%;
+  }
+  .add-note-btn{
+    top: 5%;
+    font-size: 0.75rem;
+  }
+}

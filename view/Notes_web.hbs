@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Your Own Notes</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="shortcut icon" href="images/note_website_titlelogo.png" type="image/x-icon">
+  <!-- <link rel="stylesheet" href="../public/css/note_web.css"> -->
+  <link rel="stylesheet" href="css/note_web.css">
+</head>
+
+<body>
+  <div class="nav-bar">
+    <div class="nav-content project-title">Encrypted Notes</div>
+    <div id="logout-menu">
+      {{#if user.full_name}}
+        <div id="account-holder-name" class="nav-content user-name">
+          {{#if user.profile_image}}
+            <img src="Upload/{{user.profile_image}}" class="profile-photo" alt="user-photo">
+          {{else}}
+            <img src="images/default-profile.jpg" class="profile-photo" alt="user-photo">
+          {{/if}}
+          {{user.full_name}}
+          <i class="bi bi-caret-down-fill"></i>
+        </div>
+      {{else}}
+        <div id="account-holder-name" class="nav-content user-name">
+          <img src="images/default-profile.jpg" class="profile-photo" alt="user-photo">
+          Danish Akhter
+          <i class="bi bi-caret-down-fill"></i>
+        </div>
+      {{/if}}
+      <div id="menu" class="dropdown-menu">
+        <div id="my-profile"><i class="bi bi-person-fill profile-icon"></i>My Profile</div>
+        <div id="log-out-option"><i class="bi bi-power"></i>Log Out</div>
+      </div>
+    </div>
+  </div>
+  <div class="main-section">
+    <div id="message-box" class="greet-msg">
+      <div class="greet-text">
+        <div id="welcoming-text" class="app-welcome-text">Welcome To The <br> "Note Taking Web App"</div>
+        {{#if user.full_name}}
+          <div id="welcoming-salutation" class="salutation-text">Hello {{user.full_name}}</div>
+        {{/if}}
+      </div>
+    </div>
+    <div id="profile-data" class="profile-data-block">
+      <div id="back-profile-card" class="back-arrow"><i class="bi bi-arrow-left"></i></div>
+      <div class="profile-data">
+        <h2 class="profile-card-title">About</h2>
+        <div  class="profile-image-section">
+          <div id = "image-block" class="profile-image">
+            {{#if user.profile_image}}
+              <img id="user-profile-imagse" src="Upload/{{user.profile_image}}" alt="image">
+            {{else}}
+              <img id="user-profile-imagse" src="images/default-profile.jpg" alt="image">
+            {{/if}}                
+            
+            <div id="upload-image-button" class="upload-button">Upload</div>
+          </div>
+          <div id="upload-form" class="profile-photo-upload-form">
+            <form action="/upload/image" method="POST" encType="multipart/form-data" onsubmit="return image_validation()" id="upload-img-form" class="upload-form">
+              <h3>Upload Profile Photo</h3>
+              <p style="font-size: 0.7rem;">Size less than 2MB, Type - .jpeg, .jpg, and png</p>
+              <input id="image-file" type="file" name="sampleFile" accept="image/*" required/>
+              <input type="submit" class="image-submit" value="Submit">
+            </form>
+          </div>
+        </div>
+        {{#if user}}
+          <h1 id = "user-name">{{user.full_name}}</h1>
+          <div id = "user-id">Id : {{user.user_id}}</div>
+          <div class = "user-email">Email Id : {{user.email_id}}</div>
+          <div id = "user-reg-date" class="user-membership-date">{{user.reg_date}}</div>
+        {{/if}}
+      </div>
+      <div class="remove-account-link"> &#128532;Delete Your Account</div>
+    </div>
+    <div id="block" class="note-taking-box">
+      <div class="note-taking-section main-section-left">
+        <div class="note-taking-section-content">
+          <div class="note-title-box">
+            <div class="note-title">Note Title :</div>
+            <div class="note-title-input-block">
+              <input type="text" name="note-title" id="note-title" class="title-field" placeholder=" NOTE TITLE..."
+                required>
+            </div>
+          </div>
+          <div class="note-content-box">
+            <div class="note-description">Note Description :</div>
+            <div class="note-description-input-box">
+              <textarea name="note-content" id="note-content" class="text-content" cols="30" rows="10"
+                placeholder=" NOTE DESCRIPTION..." required></textarea>
+            </div>
+          </div>
+          <div id="create-notecard" class="add-note-btn"><i class="bi bi-plus-circle"></i>Add Note</div>
+        </div>
+      </div>
+      <div id="main-section-right" class="note-card-display">
+        <div id="search-options-menu" class="search-note">
+          <input type="text" name="search-note" id="search-title" placeholder="Note Title" required />
+          <input type="text" name="search-note" id="search-description" placeholder="Note Description" required />
+          <div id="date-search" class="date-search-block">
+            <label for="from-search-date">From:</label>
+            <input type="date" name="search-note" id="from-search-date" />
+            <label for="from-search-date">To:</label>
+            <input type="date" name="search-note" id="to-search-date" />
+          </div>
+          <div id="search-notebtn" class="search-button">Search</div>
+        </div>
+        <i id="search-option" class="bi bi-search"></i>
+        <div id="card-display-block" class="note-card-display card-block">
+          <div id="status-message" class="operation-status-message">Something Went Wrong</div>
+          <div id="loading-design" class="wrap">
+            <div class="loading">
+              <div class="bounceball"></div>
+              <div id="loading-text" class="text">NOW LOADING...</div>
+            </div>
+          </div>
+          <img id="null-image" src="images/null image.png" alt="no-notes-img" style="display: none; position: absolute; top: 35%;width: 450px">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <script src="../public/javascript/note.js"></script> -->
+  <script src="javascript/note.js"></script>
+</body>
+</html>

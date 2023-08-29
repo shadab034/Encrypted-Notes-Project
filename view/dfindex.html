@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Own Notes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="images/note_website_titlelogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- <link rel="stylesheet" href="../public/css/index.css"> -->
+    <script defer src="javascript/index.js"></script>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="nav-content project-title">Encrypted Notes</div>
+        <div class="nav-content author-name">CREATOR : Shadab Hussain</div>
+    </div>
+    <div class="section">
+        <div class="form-section">
+            <!-- <div id="message-box" class="greet-msg">
+                <div class="greet-text">
+                    <div id="welcoming-text" class="app-welcome-text">Welcome To The <br> "Note Taking Web App"</div>
+                    <div id="welcoming-quotation" class="quotation-text">When your heart <br> speaks, take <br> good
+                        notes.</div>
+                </div>
+            </div> -->
+            <div id="block" class="form-block">
+                <div class="login-sign-line">
+                    <div id="login-text" class="login">Login</div>
+                    <div id="reg-text" class="signup">Sign Up</div>
+                </div>
+                <div class="login-reg-line">
+                    <div id="form-side-flipper" class="load-bar">
+                        <div id="circle" class="circle-mover"><i id="arrow" class="bi bi-arrow-up-left"></i></div>
+                    </div>
+                </div>
+                <div id="login-form-block">
+                    <div id="login" class="login-form">
+                        <form action="/api/v1/auth/Login" method="post" class="form-b" onsubmit="return login_validation()">
+                            <input type='email' name="email_id" id="login-email" class="email" placeholder="Email Id"
+                                autocomplete="on" required>
+                            <span class="email-icon">
+                                <i class="bi bi-envelope-at-fill"></i>
+                            </span>
+                            <div id="login-email-id" class="login-id-confirm">
+                                <div>
+                                    <ul>
+                                        <li id="email-id-confirm-content">Please enter a valid email</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <input type="password" name="password" id="login-password" class="password"
+                                placeholder="Password" autocomplete="on" required>
+                            <span class="login-show-password icon" id="password-show">
+                                <i id="l-close-eye" class="bi bi-eye-slash-fill"></i>
+                                <i id="l-open-eye" class="bi bi-eye-fill"></i>
+                            </span>
+                            <input type="submit" value="Login">
+                        </form>
+                    </div>
+                    <div id="register" class="register-form">
+                        <form action="/api/v1/auth/SignUp" method="post" class="form-b" onsubmit="return reg_validation()">
+                            <input type="text" name="fullname" id="name" class="fullname" placeholder="Full Name"
+                                autocomplete="on" required>
+                            <div id="name-instruction" class="name-criteria">
+                                <div class="name-criteria-content">
+                                    <ul>
+                                        <li id="instruction-text"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <input type='email' name="email_id" id="register-email" class="email" placeholder="Email Id"
+                                autocomplete="on" required>
+                            <span class="register-email-icon">
+                                <i class="bi bi-envelope-at-fill"></i>
+                            </span>
+                            <div id="email-instruction" class="email-criteria">
+                                <div class="email-criteria-content">
+                                    <ul>
+                                        <li id="email-instruction-text">Please enter a valid email</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <input type="password" name="password" id="register-password" class="password"
+                                placeholder="Password" autocomplete="on" required>
+                            <span class="reg-show-password icon" id="reg-password-show">
+                                <i id="r-close-eye" class="bi bi-eye-slash-fill"></i>
+                                <i id="r-open-eye" class="bi bi-eye-fill"></i>
+                            </span>
+                            <input type="password" name="" id="confirm-password" class="password"
+                                placeholder="Confirm Password" autocomplete="on" required>
+                            <div id="confirm-pass-block" class="password-confirm">
+                                <div>
+                                    <ul>
+                                        <li id="password-conf">Password dosen't match</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="password-instruction" class="password-criteria">
+                                <div class="criteria-content">
+                                    <ul>
+                                        <li id="special-char">Password must contain at least one Special Character</li>
+                                        <li id="capital-char">Password must have at least one Capital Letter</li>
+                                        <li id="number">Password must have any number 0-9</li>
+                                        <li id="length">Password must be of at least 8 characters</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <input type="submit" value="Sign Up">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer-content"><span class="copyright-text">&#169;</span> 2023 All Rights Reserverd
+                    <!--<br> CREATOR : Shadab Hussain --></div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="../public/javascript/index.js"></script> -->
+</body>
+
+</html>
