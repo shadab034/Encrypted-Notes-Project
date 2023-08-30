@@ -37,10 +37,8 @@ Key Features
 # *Video Walkthrough*
 
 For a comprehensive walkthrough of "Encrypted Notes," watch the video guide here.
-<video src="https://raw.githubusercontent.com/shadab034/Encrypted-Notes-Project/master/Video WalkThrough.mp4" alt="Banner">
-<video width="320" height="240" controls>
-  <source src="https://raw.githubusercontent.com/shadab034/Encrypted-Notes-Project/master/Video WalkThrough.mp4" type="video/mp4">
-</video>
+
+https://github.com/shadab034/Encrypted-Notes-Project/assets/65226914/9e3a62ed-c5e5-41c5-8da0-4ff10835a47a
 
 # *Time Spent*
 
