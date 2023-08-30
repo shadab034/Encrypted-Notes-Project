@@ -32,7 +32,7 @@ Key Features
     Navigate to the project directory: cd encrypted-notes
     Install dependencies: npm install
     Configure database and environment variables
-    Start the application: npm start
+    Start the application: npm run start:dev (This will start the Application in Development Environment)   
 
 # *Video Walkthrough*
 
