@@ -15,13 +15,16 @@ Key Features
 
     CRUD Operations & User Profile: Designed an intuitive interface enabling users to perform Create, Read, Update, and Delete (CRUD) operations on their note cards. Additionally, a dedicated User Profile section allows users to edit their details and upload profile images, enhancing personalization.
 
+    User Profile and Searching: The application features a User Profile section, allowing users to manage their details and upload profile images. Furthermore, the sophisticated searching functionality enables users to search their note cards by Title, Description, and specific date ranges.
+
 # *Technologies Used*
 
-    Frontend: HTML, CSS, JavaScript
+    Frontend: HTML, CSS, JavaScript, Handlebars
     Backend: Node.js, Express
     Database: MySQL
     Authentication: JWT Cookie-Authentication
-    Data Encryption: Advanced Encryption Standard (AES) with 128-bit strength
+    Data Encryption: Advanced Encryption Standard (AES) with 128-bit strength, Bcrypt.js
+    Version Control System: Git & GitHub
 
 # *Installation and Usage*
 
@@ -34,6 +37,10 @@ Key Features
 # *Video Walkthrough*
 
 For a comprehensive walkthrough of "Encrypted Notes," watch the video guide here.
+<video src="https://raw.githubusercontent.com/shadab034/Encrypted-Notes-Project/master/Video WalkThrough.mp4" alt="Banner">
+<video width="320" height="240" controls>
+  <source src="https://raw.githubusercontent.com/shadab034/Encrypted-Notes-Project/master/Video WalkThrough.mp4" type="video/mp4">
+</video>
 
 # *Time Spent*
 

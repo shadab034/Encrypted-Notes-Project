@@ -181,7 +181,7 @@ class Dbservices{
                 })
             })
             return {
-                note_id : query_result,
+                note_id : query_result.insertId,
                 note_title : title,
                 note_description : description
             };
