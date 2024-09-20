@@ -81,3 +81,16 @@
 2023-09-03	01:05:17 	 a93d5222-92cf-4f8c-8b0c-344a5aeb4bad 	GET	undefined	/api/v1/notes/12
 2023-09-03	01:23:59 	 51d2f1f8-151f-4047-89f7-f5554cd3822e 	GET	undefined	/
 2023-09-03	01:25:53 	 24b2618d-b185-4ff6-9ff7-191d8f9c5992 	GET	undefined	/
+2024-09-20	23:04:03 	 ea183df2-081f-4019-afa3-15fb9d49a660 	GET	undefined	/
+2024-09-20	23:04:21 	 e96c5c4b-680c-4a6d-aee5-6041bc0732ca 	POST	http://localhost:3500	/auth/Login
+2024-09-20	23:04:21 	 798094d8-1f1f-44f1-b915-12d0a797ac91 	GET	undefined	/note_web
+2024-09-20	23:04:21 	 cf310c33-f0d1-4d59-a894-83d09acacbe4 	GET	undefined	/Upload/12.png
+2024-09-20	23:04:22 	 7ca760e1-9538-49e8-9dc7-1876b73ffa78 	GET	undefined	/api/v1/notes/12
+2024-09-20	23:04:51 	 1340a731-5b02-4532-a28d-bc3beba844d0 	POST	http://localhost:3500	/upload/image
+2024-09-20	23:04:51 	 5527e637-e3bd-41e0-887e-dcec7e258159 	GET	undefined	/note_web
+2024-09-20	23:04:51 	 e888ae85-6baf-41f3-af22-5df8d3d0517d 	GET	undefined	/Upload/12.png
+2024-09-20	23:04:51 	 750a7c90-0d23-4cbe-8457-77d651875865 	GET	undefined	/api/v1/notes/12
+2024-09-20	23:05:21 	 7031289f-baea-464c-ab44-5f2718b4aac3 	POST	http://localhost:3500	/api/v1/notes
+2024-09-20	23:05:30 	 b959a987-44f6-4dff-a405-e8972608ae0c 	GET	undefined	/auth/LogOut
+2024-09-20	23:05:30 	 85d0b086-ae2f-423e-a13c-5241bc6cf014 	GET	undefined	/
+2024-09-20	23:05:30 	 da0dd885-6b0a-4c3b-b40d-959ca6091190 	GET	undefined	/

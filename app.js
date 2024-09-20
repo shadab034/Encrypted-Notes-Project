@@ -7,7 +7,6 @@ const cors_config = require('./config/CorsConfig');
 const GlobalErrorHandler = require('./controllers/ErrorController');
 const NotesRoutes = require('./routes/NoteRoutes');
 const UserRoutes = require('./routes/UserRoutes');
-const { id } = require('date-fns/locale');
 const Authentication = require('./middlewares/Authentication');
 const CookieParser = require('cookie-parser');
 const fileupload = require('express-fileupload');
